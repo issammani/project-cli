@@ -3,7 +3,7 @@
 
 from json import dumps
 from os import path,getcwd,makedirs
-from .config import LICENSES, README, ENTRY_POINT
+from .config import LICENSES, README, ENTRY_POINT, GIT_IGNORE
 from .base import Base
 import time, re
 from string import Template
@@ -73,6 +73,9 @@ class Project():
         with open(self.entry_point,'w') as f:
             f.write(ENTRY_POINT)
         
+        # add .gitignore file
+        with open('.gitignore','w') as f:
+            f.write(GIT_IGNORE)
         #generate dir for source files
         try:
             if not path.exists('src'):

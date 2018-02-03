@@ -11,3 +11,6 @@ ENTRY_POINT = ( "\"\"\"Module documentation goes here\"\"\"\n\n\n"
                 "\tprint('Hello, World!')\n\n"
                 "if __name__ == '__main__':\n"
                 "\tmain()")
+GIT_IGNORE = ("__pycache__/\n"
+              "*.pyc\n"
+              ".vscode/\n")
