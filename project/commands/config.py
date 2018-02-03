@@ -4,3 +4,10 @@ LICENSES = {
 }
 
 README = '# $project_name\n\n$project_description\n\n## Table of Contents\n\n\n##Installation\n\n\n##Usage\n\n## Support'
+
+ENTRY_POINT = ( "\"\"\"Module documentation goes here\"\"\"\n\n\n"
+                "def main():\n"
+                "\t#source code\n"
+                "\tprint('Hello, World!')\n\n"
+                "if __name__ == '__main__':\n"
+                "\tmain()")

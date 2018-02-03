@@ -26,7 +26,7 @@ from project import __version__
  
 def main():
     """Main CLI entrypoint."""
-    import project.commands #all our supported commands
+    import project.commands as commands #all our supported commands
     options = docopt(__doc__, version=__version__)
     #see if command is present
     for k, v in options.items():

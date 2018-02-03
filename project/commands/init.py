@@ -2,10 +2,10 @@
 
 
 from json import dumps
-from os import path,getcwd
-from .config import LICENSES, README
+from os import path,getcwd,makedirs
+from .config import LICENSES, README, ENTRY_POINT
 from .base import Base
-import time
+import time, re
 from string import Template
 
 
@@ -68,6 +68,17 @@ class Project():
         #open new license file and write result
         with open('README.md', 'w') as f:
             f.write(readme)
+        
+        #generate entrypoint file
+        with open(self.entry_point,'w') as f:
+            f.write(ENTRY_POINT)
+        
+        #generate dir for source files
+        try:
+            if not path.exists('src'):
+                makedirs('src')
+        except OSError:
+            print ('Error: Creating source directory. ')
         
         
 
