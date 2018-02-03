@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 from os.path import abspath, dirname, join
 
 
-__version__ = __import__('project').__version__
+from project import __version__
 
 this_dir = abspath(dirname(__file__))
 with open(join(this_dir, 'README.rst'), encoding='utf-8') as f:
@@ -12,7 +12,7 @@ with  open(join(this_dir, 'LICENSE'), encoding='utf-8') as f:
     license = f.read()
 
 setup(
-    name = 'py-project',
+    name = 'project',
     version = __version__,
     description = 'Generate a basic python project structure',
     long_description = long_description,
