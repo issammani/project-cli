@@ -1,4 +1,4 @@
-from setuptools import setup, find_packages
+from setuptools import  Command,setup, find_packages
 from os.path import abspath, dirname, join
 
 
@@ -10,6 +10,25 @@ with open(join(this_dir, 'README.rst'), encoding='utf-8') as f:
 
 with  open(join(this_dir, 'LICENSE'), encoding='utf-8') as f:
     license = f.read()
+
+
+class PyTest(Command):
+    user_options = []
+    def initialize_options(self):
+        pass
+
+    def finalize_options(self):
+        pass
+
+    def run(self):
+        from subprocess import check_output, CalledProcessError
+        import sys
+        """Run all tests!"""
+        try:
+            check_output('pytest')
+        except CalledProcessError as e:
+            print(e.output)
+
 
 setup(
     name = 'project',
@@ -33,9 +52,13 @@ setup(
     keywords = 'cli',
     packages = find_packages(exclude=['docs', 'tests*']),
     install_requires = ['docopt'],
+    extras_require = {
+        'test': ['pytest'],
+    },
     entry_points = {
         'console_scripts': [
             'project=project.cli:main',
         ],
     },
+    cmdclass = {'test': PyTest},
 )

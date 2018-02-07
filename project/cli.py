@@ -8,7 +8,7 @@ Usage:
  
 Options:
   -h --help                         Show this screen.
-  --version                         Show version.
+  -v --version                      Show version.
  
 Examples:
   project init
