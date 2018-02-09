@@ -1,7 +1,7 @@
 """The init command."""
 
 
-from json import dumps
+
 from os import path,getcwd,makedirs
 from .config import LICENSES, README, ENTRY_POINT, GIT_IGNORE
 from .base import Base

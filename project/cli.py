@@ -3,8 +3,9 @@ project
  
 Usage:
   project init
+  project env
   project -h | --help
-  project --version
+  project -v |--version
  
 Options:
   -h --help                         Show this screen.
@@ -12,6 +13,7 @@ Options:
  
 Examples:
   project init
+  project env
  
 Help:
   For help using this tool, please open an issue on the Github repository:
@@ -30,7 +32,7 @@ def main():
     options = docopt(__doc__, version=__version__)
     #see if command is present
     for k, v in options.items():
-      if hasattr(commands, k):
+      if v and hasattr(commands, k): # v is true for the called command
           module = getattr(commands, k)
           commands = getmembers(module, isclass)
           command = [command[1] for command in commands if command[0] != 'Base'][0]

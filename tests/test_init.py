@@ -10,7 +10,7 @@ from project.commands import init
 class TestInit(TestCase):   
     pass # for now
 
-class TestProject(TestCase):
+class TestMakeProject(TestCase):
     
     # some mock data
     @classmethod
