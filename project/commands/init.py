@@ -2,7 +2,7 @@
 
 
 
-from os import path,getcwd,makedirs
+from os import path,getcwd,makedirs,environ
 from .config import LICENSES, README, ENTRY_POINT, GIT_IGNORE
 from .base import Base
 import time, re
@@ -16,9 +16,18 @@ class Init(Base):
 
     def get_user_infos(self):
         #for now this is the data needed
-        dict = {}    
-        dict['owner_name']= input("Please enter your name: ")
-        dict['owner_email']= input("Please enter your email: ")
+        dict = {}
+        
+        #get name and email from env vars
+        try:
+            dict['owner_name'] = environ['PROJECT_OWNER_NAME']
+        except KeyError as e:
+            dict['owner_name']= input("Please enter your name: ")
+        try:
+            dict['owner_email']= environ['PROJECT_OWNER_EMAIL']  
+        except KeyError:
+            dict['owner_email']= input("Please enter your email: ")
+          
         dict['entry_point']= input("Entrypoint file (main.py): ")
         dict['description'] = input("Project description :  ")
         dict['license']= input("License (MIT) : ")

@@ -3,7 +3,6 @@ project
  
 Usage:
   project init
-  project env
   project -h | --help
   project -v |--version
  
@@ -13,7 +12,6 @@ Options:
  
 Examples:
   project init
-  project env
  
 Help:
   For help using this tool, please open an issue on the Github repository:
