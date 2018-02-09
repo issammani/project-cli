@@ -1,4 +1,4 @@
-# Project-cli
+# Project-cli [![Build Status](https://travis-ci.org/issamouu69/project-cli.svg?branch=master)](https://travis-ci.org/issamouu69/project-cli)
     simple utility to create basic structure of python projet.
 ## Installation
 For now just clone the directory and run setup.py like so :

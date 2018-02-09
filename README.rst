@@ -1,7 +1,8 @@
 ===========
 Project-cli
 ===========
-
+.. image:: https://travis-ci.org/issamouu69/project-cli.svg?branch=master
+    :target: https://travis-ci.org/issamouu69/project-cli
 simple utility to create basic structure of python project.
 
 Installation
