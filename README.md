@@ -3,9 +3,8 @@
 ## Installation
 For now just clone the directory and run setup.py like so :
 ```bash
-mkdir project_cli #just to keep things clean !
-cd project_cli
 git clone https://github.com/issamouu69/project-cli.git
+cd project_cli
 python setup.py install # For now supporting python3 only
 ```
 ## Running application
