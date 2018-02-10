@@ -10,5 +10,4 @@ install:
   - python setup.py develop
 
 script:
-  - project
   - py.test
